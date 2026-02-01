@@ -1,0 +1,264 @@
+---
+const experiences = [
+	{
+		title: "Site Reliability Engineer",
+		company: "Roundcircle",
+		location: "Gurugram, Haryana",
+		period: "June 2025 - Present",
+		description: [
+			"Delivered 20% AWS cost savings by optimizing ECS task sizing, auto-scaling configurations, and resource utilization",
+			"Designed and operated a full observability stack from scratch, enabling end-to-end metrics, logs and distributed tracing for production services",
+			"Built CI/CD from the ground up with Jenkins master-slave architecture, reducing build duration via caching and multi-stage Dockerfiles"
+		]
+	},
+	{
+		title: "SRE Intern",
+		company: "Roundcircle",
+		location: "Gurugram, Haryana",
+		period: "October 2024 - May 2025",
+		description: [
+			"Built and scaled CI/CD pipelines using Jenkins master–agent architecture",
+			"Implemented Terraform for AWS infrastructure management, incorporating automated security scanning and compliance checks; reduced security vulnerabilities by 20% and improved audit readiness",
+			"Deployed containerized services on AWS ECS and optimized content delivery using CloudFront"
+		]
+	},
+	{
+		title: "SDE Intern",
+		company: "OLX Indonesia - Roundcircle",
+		location: "Gurugram, Haryana",
+		period: "January 2024 - September 2024",
+		description: [
+			"Developed backend services using Java and Kotlin for catalog and monetization features",
+			"Led migration of observability from New Relic to Datadog across 20+ services with zero downtime",
+			"Collaborated cross-functionally using Git and JIRA to deliver production features"
+		]
+	}
+];
+---
+
+<section id="experience" class="experience-section">
+	<div class="container">
+		<div class="section-header">
+			<h2 class="section-title">Work Experience</h2>
+			<p class="section-subtitle">My professional journey</p>
+		</div>
+		<div class="timeline">
+			{experiences.map((exp, index) => (
+				<div class="timeline-item" data-index={index}>
+					<div class="timeline-marker"></div>
+					<div class="timeline-content">
+						<div class="experience-card">
+							<div class="card-header">
+								<div>
+									<h3 class="experience-title">{exp.title}</h3>
+									<div class="company-info">
+										<span class="company-name">{exp.company}</span>
+										<span class="separator">•</span>
+										<span class="location">{exp.location}</span>
+									</div>
+								</div>
+								<span class="period">{exp.period}</span>
+							</div>
+							<ul class="description-list">
+								{exp.description.map((item) => (
+									<li>{item}</li>
+								))}
+							</ul>
+						</div>
+					</div>
+				</div>
+			))}
+		</div>
+	</div>
+</section>
+
+<style>
+	.experience-section {
+		background: var(--color-bg);
+	}
+
+	.section-header {
+		text-align: center;
+		margin-bottom: 4rem;
+	}
+
+	.section-title {
+		font-size: 2.5rem;
+		margin-bottom: 1rem;
+		background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
+	}
+
+	.section-subtitle {
+		font-size: 1.125rem;
+		color: var(--color-text-secondary);
+	}
+
+	.timeline {
+		position: relative;
+		max-width: 900px;
+		margin: 0 auto;
+	}
+
+	.timeline::before {
+		content: '';
+		position: absolute;
+		left: 20px;
+		top: 0;
+		bottom: 0;
+		width: 2px;
+		background: linear-gradient(180deg, var(--color-primary), var(--color-accent));
+	}
+
+	.timeline-item {
+		position: relative;
+		padding-left: 60px;
+		margin-bottom: 3rem;
+		animation: fadeInUp 0.6s ease-out backwards;
+	}
+
+	.timeline-item[data-index="0"] { animation-delay: 0.1s; }
+	.timeline-item[data-index="1"] { animation-delay: 0.2s; }
+	.timeline-item[data-index="2"] { animation-delay: 0.3s; }
+
+	.timeline-marker {
+		position: absolute;
+		left: 12px;
+		top: 8px;
+		width: 18px;
+		height: 18px;
+		border-radius: 50%;
+		background: var(--color-primary);
+		border: 3px solid var(--color-bg);
+		box-shadow: 0 0 0 3px var(--color-primary);
+		z-index: 1;
+	}
+
+	.experience-card {
+		background: var(--color-bg-secondary);
+		border: 1px solid var(--color-border);
+		border-radius: 1rem;
+		padding: 2rem;
+		transition: var(--transition);
+	}
+
+	.experience-card:hover {
+		border-color: var(--color-primary);
+		transform: translateY(-5px);
+		box-shadow: var(--shadow-hover);
+	}
+
+	.card-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+		margin-bottom: 1.5rem;
+		gap: 1rem;
+	}
+
+	.experience-title {
+		font-size: 1.5rem;
+		color: var(--color-text);
+		margin-bottom: 0.5rem;
+	}
+
+	.company-info {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		flex-wrap: wrap;
+		font-size: 1rem;
+		color: var(--color-text-secondary);
+	}
+
+	.company-name {
+		color: var(--color-primary);
+		font-weight: 600;
+	}
+
+	.separator {
+		color: var(--color-text-secondary);
+	}
+
+	.period {
+		background: var(--color-primary);
+		color: white;
+		padding: 0.5rem 1rem;
+		border-radius: 2rem;
+		font-size: 0.875rem;
+		font-weight: 600;
+		white-space: nowrap;
+	}
+
+	.description-list {
+		list-style: none;
+		padding: 0;
+	}
+
+	.description-list li {
+		padding-left: 1.5rem;
+		margin-bottom: 0.75rem;
+		color: var(--color-text-secondary);
+		line-height: 1.6;
+		position: relative;
+	}
+
+	.description-list li::before {
+		content: '▹';
+		position: absolute;
+		left: 0;
+		color: var(--color-primary);
+		font-size: 1.25rem;
+		line-height: 1.6;
+	}
+
+	@keyframes fadeInUp {
+		from {
+			opacity: 0;
+			transform: translateY(30px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	@media (max-width: 768px) {
+		.section-title {
+			font-size: 2rem;
+		}
+
+		.timeline::before {
+			left: 10px;
+		}
+
+		.timeline-item {
+			padding-left: 40px;
+		}
+
+		.timeline-marker {
+			left: 3px;
+			width: 16px;
+			height: 16px;
+		}
+
+		.card-header {
+			flex-direction: column;
+		}
+
+		.period {
+			align-self: flex-start;
+		}
+
+		.experience-card {
+			padding: 1.5rem;
+		}
+
+		.experience-title {
+			font-size: 1.25rem;
+		}
+	}
+</style>
+

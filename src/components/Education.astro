@@ -1,0 +1,230 @@
+---
+---
+
+<section id="education" class="education-section">
+	<div class="container">
+		<div class="section-header">
+			<h2 class="section-title">Education & Certifications</h2>
+			<p class="section-subtitle">My academic background and professional certifications</p>
+		</div>
+		<div class="education-content">
+			<div class="education-card">
+				<div class="card-icon">
+					<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+						<path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+						<path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+					</svg>
+				</div>
+				<div class="card-content">
+					<h3 class="degree-title">Bachelor of Technology in Computer Science</h3>
+					<p class="university">Chitkara University</p>
+					<div class="details">
+						<span class="location">Patiala, Punjab</span>
+						<span class="separator">•</span>
+						<span class="period">June 2021 - June 2025</span>
+					</div>
+				</div>
+			</div>
+
+			<div class="certifications">
+				<h3 class="cert-heading">Professional Certifications</h3>
+				<div class="cert-card">
+					<div class="cert-icon">
+						<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+							<circle cx="12" cy="8" r="7"></circle>
+							<polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+						</svg>
+					</div>
+					<div class="cert-content">
+						<h4>Kubernetes and Cloud Native Associate (KCNA)</h4>
+						<p class="issuer">Linux Foundation</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<style>
+	.education-section {
+		background: var(--color-bg);
+		position: relative;
+	}
+
+	.section-header {
+		text-align: center;
+		margin-bottom: 4rem;
+	}
+
+	.section-title {
+		font-size: 2.5rem;
+		margin-bottom: 1rem;
+		background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
+	}
+
+	.section-subtitle {
+		font-size: 1.125rem;
+		color: var(--color-text-secondary);
+	}
+
+	.education-content {
+		max-width: 900px;
+		margin: 0 auto;
+	}
+
+	.education-card {
+		background: var(--color-bg-secondary);
+		border: 1px solid var(--color-border);
+		border-radius: 1rem;
+		padding: 2.5rem;
+		display: flex;
+		gap: 2rem;
+		align-items: flex-start;
+		margin-bottom: 3rem;
+		transition: var(--transition);
+		animation: fadeInUp 0.6s ease-out;
+	}
+
+	.education-card:hover {
+		border-color: var(--color-primary);
+		transform: translateY(-5px);
+		box-shadow: var(--shadow-hover);
+	}
+
+	.card-icon {
+		width: 80px;
+		height: 80px;
+		min-width: 80px;
+		border-radius: 1rem;
+		background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: white;
+	}
+
+	.card-content {
+		flex: 1;
+	}
+
+	.degree-title {
+		font-size: 1.75rem;
+		margin-bottom: 0.75rem;
+		color: var(--color-text);
+	}
+
+	.university {
+		font-size: 1.25rem;
+		color: var(--color-primary);
+		font-weight: 600;
+		margin-bottom: 0.75rem;
+	}
+
+	.details {
+		display: flex;
+		align-items: center;
+		gap: 0.75rem;
+		flex-wrap: wrap;
+		color: var(--color-text-secondary);
+	}
+
+	.separator {
+		color: var(--color-text-secondary);
+	}
+
+	.certifications {
+		animation: fadeInUp 0.6s ease-out 0.2s backwards;
+	}
+
+	.cert-heading {
+		font-size: 1.5rem;
+		margin-bottom: 1.5rem;
+		color: var(--color-text);
+		text-align: center;
+	}
+
+	.cert-card {
+		background: var(--color-bg-secondary);
+		border: 1px solid var(--color-border);
+		border-radius: 1rem;
+		padding: 2rem;
+		display: flex;
+		gap: 1.5rem;
+		align-items: center;
+		transition: var(--transition);
+	}
+
+	.cert-card:hover {
+		border-color: var(--color-primary);
+		transform: translateX(5px);
+		box-shadow: 0 5px 20px rgba(59, 130, 246, 0.2);
+	}
+
+	.cert-icon {
+		width: 64px;
+		height: 64px;
+		min-width: 64px;
+		border-radius: 50%;
+		background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-primary) 100%);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: white;
+	}
+
+	.cert-content h4 {
+		font-size: 1.25rem;
+		margin-bottom: 0.5rem;
+		color: var(--color-text);
+	}
+
+	.issuer {
+		color: var(--color-text-secondary);
+		font-size: 1rem;
+	}
+
+	@keyframes fadeInUp {
+		from {
+			opacity: 0;
+			transform: translateY(30px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	@media (max-width: 768px) {
+		.section-title {
+			font-size: 2rem;
+		}
+
+		.education-card {
+			flex-direction: column;
+			padding: 2rem;
+		}
+
+		.card-icon {
+			width: 64px;
+			height: 64px;
+			min-width: 64px;
+		}
+
+		.degree-title {
+			font-size: 1.5rem;
+		}
+
+		.university {
+			font-size: 1.125rem;
+		}
+
+		.cert-card {
+			flex-direction: column;
+			text-align: center;
+		}
+	}
+</style>
+

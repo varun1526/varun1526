@@ -1,0 +1,101 @@
+---
+interface Props {
+	title?: string;
+	description?: string;
+}
+
+const { 
+	title = "Varun Mittal - SRE / DevOps Engineer", 
+	description = "SRE / DevOps Engineer with 2+ years of experience in CI/CD, AWS infrastructure, and observability platforms" 
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content={description} />
+		<meta name="generator" content={Astro.generator} />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<title>{title}</title>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+
+<style is:global>
+	:root {
+		--color-primary: #3b82f6;
+		--color-primary-dark: #2563eb;
+		--color-secondary: #8b5cf6;
+		--color-accent: #06b6d4;
+		--color-bg: #0f172a;
+		--color-bg-secondary: #1e293b;
+		--color-text: #f1f5f9;
+		--color-text-secondary: #cbd5e1;
+		--color-border: #334155;
+		--transition: all 0.3s ease;
+		--shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.3);
+		--shadow-hover: 0 15px 40px -15px rgba(59, 130, 246, 0.4);
+	}
+
+	* {
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+	}
+
+	html {
+		scroll-behavior: smooth;
+		font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+	}
+
+	body {
+		margin: 0;
+		width: 100%;
+		min-height: 100vh;
+		background: var(--color-bg);
+		color: var(--color-text);
+		line-height: 1.6;
+		overflow-x: hidden;
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		line-height: 1.2;
+		font-weight: 700;
+	}
+
+	a {
+		color: var(--color-primary);
+		text-decoration: none;
+		transition: var(--transition);
+	}
+
+	a:hover {
+		color: var(--color-accent);
+	}
+
+	.container {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 0 2rem;
+	}
+
+	section {
+		padding: 5rem 0;
+		position: relative;
+	}
+
+	@media (max-width: 768px) {
+		section {
+			padding: 3rem 0;
+		}
+		
+		.container {
+			padding: 0 1rem;
+		}
+	}
+</style>

@@ -1,0 +1,170 @@
+---
+const skillCategories = [
+	{
+		title: "Cloud & Platforms",
+		skills: ["AWS ECS", "AWS CloudFront", "AWS WAF", "Docker", "Kubernetes"]
+	},
+	{
+		title: "Infrastructure as Code",
+		skills: ["Terraform", "Jenkins", "GitHub Actions"]
+	},
+	{
+		title: "Observability",
+		skills: ["Prometheus", "Grafana", "Loki", "Tempo", "OpenTelemetry", "Datadog", "New Relic"]
+	},
+	{
+		title: "Languages & Tools",
+		skills: ["Python", "Java", "Kotlin", "SQL", "Git", "Linux", "JIRA"]
+	}
+];
+---
+
+<section id="skills" class="skills-section">
+	<div class="container">
+		<div class="section-header">
+			<h2 class="section-title">Skills & Expertise</h2>
+			<p class="section-subtitle">Technologies and tools I work with</p>
+		</div>
+		<div class="skills-grid">
+			{skillCategories.map((category) => (
+				<div class="skill-category">
+					<h3 class="category-title">{category.title}</h3>
+					<div class="skills-list">
+						{category.skills.map((skill) => (
+							<div class="skill-item">
+								<span class="skill-name">{skill}</span>
+							</div>
+						))}
+					</div>
+				</div>
+			))}
+		</div>
+	</div>
+</section>
+
+<style>
+	.skills-section {
+		background: var(--color-bg-secondary);
+		position: relative;
+	}
+
+	.skills-section::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 1px;
+		background: linear-gradient(90deg, transparent, var(--color-border), transparent);
+	}
+
+	.section-header {
+		text-align: center;
+		margin-bottom: 4rem;
+	}
+
+	.section-title {
+		font-size: 2.5rem;
+		margin-bottom: 1rem;
+		background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
+	}
+
+	.section-subtitle {
+		font-size: 1.125rem;
+		color: var(--color-text-secondary);
+	}
+
+	.skills-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+		gap: 2rem;
+	}
+
+	.skill-category {
+		background: var(--color-bg);
+		border: 1px solid var(--color-border);
+		border-radius: 1rem;
+		padding: 2rem;
+		transition: var(--transition);
+		animation: fadeInUp 0.6s ease-out backwards;
+	}
+
+	.skill-category:nth-child(1) { animation-delay: 0.1s; }
+	.skill-category:nth-child(2) { animation-delay: 0.2s; }
+	.skill-category:nth-child(3) { animation-delay: 0.3s; }
+	.skill-category:nth-child(4) { animation-delay: 0.4s; }
+
+	.skill-category:hover {
+		border-color: var(--color-primary);
+		transform: translateY(-5px);
+		box-shadow: var(--shadow-hover);
+	}
+
+	.category-title {
+		font-size: 1.5rem;
+		margin-bottom: 1.5rem;
+		color: var(--color-primary);
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+	}
+
+	.category-title::before {
+		content: '';
+		width: 4px;
+		height: 1.5rem;
+		background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+		border-radius: 2px;
+	}
+
+	.skills-list {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.75rem;
+	}
+
+	.skill-item {
+		background: var(--color-bg-secondary);
+		border: 1px solid var(--color-border);
+		padding: 0.5rem 1rem;
+		border-radius: 2rem;
+		transition: var(--transition);
+		cursor: default;
+	}
+
+	.skill-item:hover {
+		background: var(--color-primary);
+		border-color: var(--color-primary);
+		transform: translateY(-2px);
+	}
+
+	.skill-name {
+		font-size: 0.875rem;
+		font-weight: 500;
+	}
+
+	@keyframes fadeInUp {
+		from {
+			opacity: 0;
+			transform: translateY(30px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	@media (max-width: 768px) {
+		.section-title {
+			font-size: 2rem;
+		}
+
+		.skills-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>
+
