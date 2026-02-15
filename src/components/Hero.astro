@@ -40,8 +40,12 @@ through automation scripting.
 				</div>
 			</div>
 			<div class="hero-image">
-				<div class="image-placeholder">
-					<div class="gradient-circle"></div>
+				<div class="hero-image">
+  					<div class="image-placeholder">
+    					<div class="gradient-circle">
+      						<img src="/varun1526/varun_mittal.png" alt="Varun Mittal" class="profile-img" />
+    					</div>
+  					</div>
 				</div>
 			</div>
 		</div>
@@ -56,6 +60,15 @@ through automation scripting.
 </section>
 
 <style>
+	.profile-img {
+		position: absolute;
+		inset: 20px;          /* same gap as ::before */
+		width: calc(100% - 40px);
+		height: calc(100% - 40px);
+		border-radius: 50%;
+		object-fit: cover;
+		z-index: 2;           /* puts image above background */
+		}
 	.hero {
 		min-height: 100vh;
 		display: flex;
